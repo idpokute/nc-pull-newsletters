@@ -55,8 +55,7 @@ function nc_newsletter_shortcode($atts = [], $content = null, $tag = '') {
                         onInit : function (){
                             container.empty();
                             jQuery.each( data.items, function(k, v) {
-                                console.log(v);
-                                var $item = jQuery("<li><a href=" + v.link + "><span class='nc_subject'>" + v.subject + "</span><span class='nc_date'>" + v.date + "</span></a></li>");
+                                var $item = jQuery("<li><a target='_blank' href=" + v.link + "><span class='nc_subject'>" + v.subject + "</span><span class='nc_date'>" + v.date + "</span></a></li>");
                                 container.append($item.clone());
                             });
                         },
@@ -64,8 +63,7 @@ function nc_newsletter_shortcode($atts = [], $content = null, $tag = '') {
                             loadPage(pagenumber, <?php echo $nc_atts['itemsonpage']; ?>);
 
                             jQuery.each( data.items, function(k, v) {
-                                console.log(v);
-                                var $item = jQuery("<li><a href=" + v.link + ">" + v.subject + "</a></li>");
+                                var $item = jQuery("<li><a target='_blank' href=" + v.link + "><span class='nc_subject'>" + v.subject + "</span><span class='nc_date'>" + v.date + "</span></a></li>");
                                 container.append($item.clone());
                             });
                         }
